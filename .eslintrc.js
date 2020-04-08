@@ -1,31 +1,37 @@
+'use strict';
+
 module.exports = {
   extends: [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "plugin:react/recommended",
-    "prettier",
-    "prettier/react"
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:react/recommended',
+    'prettier',
+    'prettier/react',
   ],
-  plugins: ["prettier", "react"],
+  devServer: {
+    contentBase: './dist',
+    hot: true,
+  },
+  plugins: ['prettier', 'react'],
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: "module",
+    sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   env: {
     es6: true,
     browser: true,
-    node: true
+    node: true,
   },
   rules: {
-    "prettier/prettier": [
-      "error",
+    'prettier/prettier': [
+      'error',
       {},
       {
-        usePrettierrc: false
-      }
-    ]
-  }
+        usePrettierrc: false,
+      },
+    ],
+  },
 };
